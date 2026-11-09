@@ -28,6 +28,17 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+	if direction == 1:
+		$Sprite_MC.play("Walking")
+		$Sprite_MC.flip_h = false
+
+	if direction == 0:
+		$Sprite_MC.play("Idle")
+
+	if direction == -1:
+		$Sprite_MC.play("Walking")
+		$Sprite_MC.flip_h = true
+
 	if Input.is_action_just_pressed("interact") and NPC_interact == true:
 		print("hi there!")
 	
@@ -39,14 +50,14 @@ func _physics_process(delta: float) -> void:
 	#if parry == true:
 
 
-func _on_npc_1_body_entered(body: Node2D) -> void:
-	$"../NPC_1/E_Press".position = $"../NPC_1/Marker2D".position
-	NPC_interact = true
-
-
-func _on_npc_1_body_exited(body: Node2D) -> void:
-	$"../NPC_1/E_Press".position.y = 500
-	NPC_interact = false
+#func _on_npc_1_body_entered(body: Node2D) -> void:
+	#$"../NPC_1/E_Press".position = $"../NPC_1/Marker2D".position
+	#NPC_interact = true
+#
+#
+#func _on_npc_1_body_exited(body: Node2D) -> void:
+	#$"../NPC_1/E_Press".position.y = 500
+	#NPC_interact = false
 
 
 func _on_timer_timeout() -> void:
