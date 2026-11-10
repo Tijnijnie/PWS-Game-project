@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://6yrrmuxudx2u"]
+
+[ext_resource type="Texture2D" uid="uid://dw08h0ptac60r" path="res://Sprites/Landschap_start.png" id="1_qfsbk"]
+[ext_resource type="Script" uid="uid://0u0rcv85vd1f" path="res://scripts/npc_1.gd" id="2_ewre8"]
+[ext_resource type="Texture2D" uid="uid://b1jplhf10v6oh" path="res://Sprites/Bloem_1.png" id="3_ewre8"]
+[ext_resource type="Texture2D" uid="uid://bbj3c0r04tv4f" path="res://icon.svg" id="3_mrmgl"]
+[ext_resource type="PackedScene" uid="uid://3q21t3lg5tfj" path="res://scenes/player.tscn" id="4_j00b8"]
+[ext_resource type="Texture2D" uid="uid://bu0opc10l0u5j" path="res://Sprites/Bloem_2.png" id="4_mrmgl"]
+[ext_resource type="Texture2D" uid="uid://xp2hpxdedwv4" path="res://Sprites/Bloem_3.png" id="5_g4gdd"]
+[ext_resource type="Texture2D" uid="uid://chbp2l5dnueo3" path="res://Sprites/Boom_defi.png" id="5_oa7lk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wq052"]
+size = Vector2(477.37552, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_smb7b"]
+size = Vector2(333, 252)
+
+[node name="Field" type="Node2D" unique_id=697848017]
+
+[node name="Start" type="Node2D" parent="." unique_id=466349729]
+
+[node name="LandschapStart" type="Sprite2D" parent="Start" unique_id=2105299944]
+texture_filter = 1
+position = Vector2(3407, 1141)
+scale = Vector2(7.33, 7.33)
+texture = ExtResource("1_qfsbk")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Start" unique_id=632133479]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Start/StaticBody2D" unique_id=1400106987]
+position = Vector2(3450.9998, 1703)
+scale = Vector2(6.629999, 6.629999)
+shape = SubResource("RectangleShape2D_wq052")
+
+[node name="Background_trees" type="Node2D" parent="." unique_id=914283371]
+
+[node name="BoomDefi" type="Sprite2D" parent="Background_trees" unique_id=768495187]
+texture_filter = 1
+position = Vector2(3431, 1311.9999)
+scale = Vector2(12.66, 12.66)
+texture = ExtResource("5_oa7lk")
+
+[node name="BoomDefi2" type="Sprite2D" parent="Background_trees" unique_id=1505670917]
+texture_filter = 1
+position = Vector2(2205.0002, 1333)
+scale = Vector2(12.66, 12.66)
+texture = ExtResource("5_oa7lk")
+
+[node name="BoomDefi3" type="Sprite2D" parent="Background_trees" unique_id=1353222767]
+texture_filter = 1
+position = Vector2(2779.9998, 1372)
+scale = Vector2(10.355, 10.355)
+texture = ExtResource("5_oa7lk")
+
+[node name="bloemen" type="Node2D" parent="." unique_id=1553520233]
+
+[node name="Bloem1" type="Sprite2D" parent="bloemen" unique_id=1132204152]
+texture_filter = 1
+position = Vector2(4598, 1579)
+scale = Vector2(3.625, 3.625)
+texture = ExtResource("3_ewre8")
+
+[node name="Bloem9" type="Sprite2D" parent="bloemen" unique_id=903049945]
+texture_filter = 1
+position = Vector2(4434, 1584)
+scale = Vector2(4.005, 4.005)
+texture = ExtResource("3_ewre8")
+
+[node name="Bloem2" type="Sprite2D" parent="bloemen" unique_id=674454312]
+texture_filter = 1
+position = Vector2(4756, 1586)
+scale = Vector2(3.955, 3.955)
+texture = ExtResource("3_ewre8")
+
+[node name="Bloem3" type="Sprite2D" parent="bloemen" unique_id=1468325571]
+texture_filter = 1
+position = Vector2(4509, 1581)
+scale = Vector2(4.375, 4.375)
+texture = ExtResource("4_mrmgl")
+
+[node name="Bloem4" type="Sprite2D" parent="bloemen" unique_id=1300981978]
+texture_filter = 1
+position = Vector2(4677, 1625)
+scale = Vector2(4.375, 4.375)
+texture = ExtResource("4_mrmgl")
+
+[node name="Bloem5" type="Sprite2D" parent="bloemen" unique_id=1971765402]
+texture_filter = 1
+position = Vector2(4181, 1615)
+scale = Vector2(4.375, 4.375)
+texture = ExtResource("4_mrmgl")
+
+[node name="Bloem6" type="Sprite2D" parent="bloemen" unique_id=437796391]
+texture_filter = 1
+position = Vector2(4710, 1593)
+scale = Vector2(2.885, 2.885)
+texture = ExtResource("5_g4gdd")
+
+[node name="Bloem7" type="Sprite2D" parent="bloemen" unique_id=121718327]
+texture_filter = 1
+position = Vector2(4827.0005, 1610.0001)
+scale = Vector2(2.885, 2.885)
+texture = ExtResource("5_g4gdd")
+
+[node name="Bloem8" type="Sprite2D" parent="bloemen" unique_id=416083086]
+texture_filter = 1
+position = Vector2(4545.0005, 1630.0001)
+scale = Vector2(2.885, 2.885)
+texture = ExtResource("5_g4gdd")
+
+[node name="NPC_1" type="Area2D" parent="." unique_id=2044810788]
+script = ExtResource("2_ewre8")
+
+[node name="Icon" type="Sprite2D" parent="NPC_1" unique_id=1106219365]
+position = Vector2(4203, 1456)
+scale = Vector2(0.828125, 2.0625)
+texture = ExtResource("3_mrmgl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC_1" unique_id=2045091297]
+position = Vector2(4203.5, 1457)
+shape = SubResource("RectangleShape2D_smb7b")
+
+[node name="Marker2D" type="Marker2D" parent="NPC_1" unique_id=1861204310]
+position = Vector2(4200, 1244)
+
+[node name="E_Press" type="Sprite2D" parent="NPC_1" unique_id=2110550650]
+position = Vector2(4585.75, 700.25)
+scale = Vector2(0.23259053, 0.16068223)
+
+[node name="player" parent="." unique_id=2072098807 instance=ExtResource("4_j00b8")]
+position = Vector2(2027, 1497)
+
+[node name="Foreground_trees" type="Node2D" parent="." unique_id=1966201567]
+
+[node name="BoomDefi2" type="Sprite2D" parent="Foreground_trees" unique_id=1631596211]
+position = Vector2(2918, 1336)
+scale = Vector2(15.705, 15.705)
+texture = ExtResource("5_oa7lk")
+
+[node name="BoomDefi" type="Sprite2D" parent="Foreground_trees" unique_id=1559814718]
+position = Vector2(1968, 1342.9999)
+scale = Vector2(16.525, 16.525)
+texture = ExtResource("5_oa7lk")
+
+[node name="BoomDefi3" type="Sprite2D" parent="Foreground_trees" unique_id=769270693]
+position = Vector2(2474, 1296)
+scale = Vector2(21.14, 24.195)
+texture = ExtResource("5_oa7lk")

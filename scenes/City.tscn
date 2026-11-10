@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://i8n2qb63n5hr"]
+
+[ext_resource type="PackedScene" uid="uid://3q21t3lg5tfj" path="res://scenes/player.tscn" id="1_mn4j2"]
+[ext_resource type="Texture2D" uid="uid://bfd6mgkc7smdt" path="res://Sprites/Stad_straat.png" id="2_muise"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ukxdj"]
+size = Vector2(3493.5, 212.25)
+
+[node name="City" type="Node2D" unique_id=1900463932]
+
+[node name="street_floor" type="Sprite2D" parent="." unique_id=1240824099]
+texture_filter = 1
+position = Vector2(2041, 1153)
+scale = Vector2(7.99, 7.99)
+texture = ExtResource("2_muise")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1753716957]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=587335036]
+position = Vector2(2040, 1282.875)
+shape = SubResource("RectangleShape2D_ukxdj")
+
+[node name="player" parent="." unique_id=2072098807 instance=ExtResource("1_mn4j2")]
+position = Vector2(649, 1029)
